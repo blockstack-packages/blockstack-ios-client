@@ -7,180 +7,180 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		971FD3771D1652970048F537 /* blockstack-client.h in Headers */ = {isa = PBXBuildFile; fileRef = 971FD3761D1652970048F537 /* blockstack-client.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		971FD37E1D1652970048F537 /* blockstack-client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 971FD3731D1652970048F537 /* blockstack-client.framework */; };
-		971FD3831D1652970048F537 /* blockstack_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971FD3821D1652970048F537 /* blockstack_clientTests.swift */; };
+		9795CE5E1D18FB2F00D5283A /* BlockstackClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9795CE5D1D18FB2F00D5283A /* BlockstackClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9795CE651D18FB2F00D5283A /* BlockstackClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9795CE5A1D18FB2F00D5283A /* BlockstackClient.framework */; };
+		9795CE6A1D18FB2F00D5283A /* BlockstackClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9795CE691D18FB2F00D5283A /* BlockstackClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		971FD37F1D1652970048F537 /* PBXContainerItemProxy */ = {
+		9795CE661D18FB2F00D5283A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 971FD36A1D1652970048F537 /* Project object */;
+			containerPortal = 9795CE511D18FB2E00D5283A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 971FD3721D1652970048F537;
-			remoteInfo = "blockstack-client";
+			remoteGlobalIDString = 9795CE591D18FB2F00D5283A;
+			remoteInfo = BlockstackClient;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		971FD3731D1652970048F537 /* blockstack-client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "blockstack-client.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		971FD3761D1652970048F537 /* blockstack-client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "blockstack-client.h"; sourceTree = "<group>"; };
-		971FD3781D1652970048F537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		971FD37D1D1652970048F537 /* blockstack-clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockstack-clientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		971FD3821D1652970048F537 /* blockstack_clientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockstack_clientTests.swift; sourceTree = "<group>"; };
-		971FD3841D1652970048F537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9795CE5A1D18FB2F00D5283A /* BlockstackClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockstackClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9795CE5D1D18FB2F00D5283A /* BlockstackClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockstackClient.h; sourceTree = "<group>"; };
+		9795CE5F1D18FB2F00D5283A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9795CE641D18FB2F00D5283A /* BlockstackClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockstackClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9795CE691D18FB2F00D5283A /* BlockstackClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockstackClientTests.swift; sourceTree = "<group>"; };
+		9795CE6B1D18FB2F00D5283A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		971FD36F1D1652970048F537 /* Frameworks */ = {
+		9795CE561D18FB2F00D5283A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		971FD37A1D1652970048F537 /* Frameworks */ = {
+		9795CE611D18FB2F00D5283A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				971FD37E1D1652970048F537 /* blockstack-client.framework in Frameworks */,
+				9795CE651D18FB2F00D5283A /* BlockstackClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		971FD3691D1652970048F537 = {
+		9795CE501D18FB2E00D5283A = {
 			isa = PBXGroup;
 			children = (
-				971FD3751D1652970048F537 /* blockstack-client */,
-				971FD3811D1652970048F537 /* blockstack-clientTests */,
-				971FD3741D1652970048F537 /* Products */,
+				9795CE5C1D18FB2F00D5283A /* BlockstackClient */,
+				9795CE681D18FB2F00D5283A /* BlockstackClientTests */,
+				9795CE5B1D18FB2F00D5283A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		971FD3741D1652970048F537 /* Products */ = {
+		9795CE5B1D18FB2F00D5283A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				971FD3731D1652970048F537 /* blockstack-client.framework */,
-				971FD37D1D1652970048F537 /* blockstack-clientTests.xctest */,
+				9795CE5A1D18FB2F00D5283A /* BlockstackClient.framework */,
+				9795CE641D18FB2F00D5283A /* BlockstackClientTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		971FD3751D1652970048F537 /* blockstack-client */ = {
+		9795CE5C1D18FB2F00D5283A /* BlockstackClient */ = {
 			isa = PBXGroup;
 			children = (
-				971FD3761D1652970048F537 /* blockstack-client.h */,
-				971FD3781D1652970048F537 /* Info.plist */,
+				9795CE5D1D18FB2F00D5283A /* BlockstackClient.h */,
+				9795CE5F1D18FB2F00D5283A /* Info.plist */,
 			);
-			path = "blockstack-client";
+			path = BlockstackClient;
 			sourceTree = "<group>";
 		};
-		971FD3811D1652970048F537 /* blockstack-clientTests */ = {
+		9795CE681D18FB2F00D5283A /* BlockstackClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				971FD3821D1652970048F537 /* blockstack_clientTests.swift */,
-				971FD3841D1652970048F537 /* Info.plist */,
+				9795CE691D18FB2F00D5283A /* BlockstackClientTests.swift */,
+				9795CE6B1D18FB2F00D5283A /* Info.plist */,
 			);
-			path = "blockstack-clientTests";
+			path = BlockstackClientTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		971FD3701D1652970048F537 /* Headers */ = {
+		9795CE571D18FB2F00D5283A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				971FD3771D1652970048F537 /* blockstack-client.h in Headers */,
+				9795CE5E1D18FB2F00D5283A /* BlockstackClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		971FD3721D1652970048F537 /* blockstack-client */ = {
+		9795CE591D18FB2F00D5283A /* BlockstackClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 971FD3871D1652970048F537 /* Build configuration list for PBXNativeTarget "blockstack-client" */;
+			buildConfigurationList = 9795CE6E1D18FB2F00D5283A /* Build configuration list for PBXNativeTarget "BlockstackClient" */;
 			buildPhases = (
-				971FD36E1D1652970048F537 /* Sources */,
-				971FD36F1D1652970048F537 /* Frameworks */,
-				971FD3701D1652970048F537 /* Headers */,
-				971FD3711D1652970048F537 /* Resources */,
+				9795CE551D18FB2F00D5283A /* Sources */,
+				9795CE561D18FB2F00D5283A /* Frameworks */,
+				9795CE571D18FB2F00D5283A /* Headers */,
+				9795CE581D18FB2F00D5283A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "blockstack-client";
-			productName = "blockstack-client";
-			productReference = 971FD3731D1652970048F537 /* blockstack-client.framework */;
+			name = BlockstackClient;
+			productName = BlockstackClient;
+			productReference = 9795CE5A1D18FB2F00D5283A /* BlockstackClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		971FD37C1D1652970048F537 /* blockstack-clientTests */ = {
+		9795CE631D18FB2F00D5283A /* BlockstackClientTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 971FD38A1D1652970048F537 /* Build configuration list for PBXNativeTarget "blockstack-clientTests" */;
+			buildConfigurationList = 9795CE711D18FB2F00D5283A /* Build configuration list for PBXNativeTarget "BlockstackClientTests" */;
 			buildPhases = (
-				971FD3791D1652970048F537 /* Sources */,
-				971FD37A1D1652970048F537 /* Frameworks */,
-				971FD37B1D1652970048F537 /* Resources */,
+				9795CE601D18FB2F00D5283A /* Sources */,
+				9795CE611D18FB2F00D5283A /* Frameworks */,
+				9795CE621D18FB2F00D5283A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				971FD3801D1652970048F537 /* PBXTargetDependency */,
+				9795CE671D18FB2F00D5283A /* PBXTargetDependency */,
 			);
-			name = "blockstack-clientTests";
-			productName = "blockstack-clientTests";
-			productReference = 971FD37D1D1652970048F537 /* blockstack-clientTests.xctest */;
+			name = BlockstackClientTests;
+			productName = BlockstackClientTests;
+			productReference = 9795CE641D18FB2F00D5283A /* BlockstackClientTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		971FD36A1D1652970048F537 /* Project object */ = {
+		9795CE511D18FB2E00D5283A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = Blockstack;
+				ORGANIZATIONNAME = Blockstack.org;
 				TargetAttributes = {
-					971FD3721D1652970048F537 = {
+					9795CE591D18FB2F00D5283A = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					971FD37C1D1652970048F537 = {
+					9795CE631D18FB2F00D5283A = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 971FD36D1D1652970048F537 /* Build configuration list for PBXProject "blockstack-client" */;
+			buildConfigurationList = 9795CE541D18FB2E00D5283A /* Build configuration list for PBXProject "BlockstackClient" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 971FD3691D1652970048F537;
-			productRefGroup = 971FD3741D1652970048F537 /* Products */;
+			mainGroup = 9795CE501D18FB2E00D5283A;
+			productRefGroup = 9795CE5B1D18FB2F00D5283A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				971FD3721D1652970048F537 /* blockstack-client */,
-				971FD37C1D1652970048F537 /* blockstack-clientTests */,
+				9795CE591D18FB2F00D5283A /* BlockstackClient */,
+				9795CE631D18FB2F00D5283A /* BlockstackClientTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		971FD3711D1652970048F537 /* Resources */ = {
+		9795CE581D18FB2F00D5283A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		971FD37B1D1652970048F537 /* Resources */ = {
+		9795CE621D18FB2F00D5283A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -190,33 +190,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		971FD36E1D1652970048F537 /* Sources */ = {
+		9795CE551D18FB2F00D5283A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		971FD3791D1652970048F537 /* Sources */ = {
+		9795CE601D18FB2F00D5283A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				971FD3831D1652970048F537 /* blockstack_clientTests.swift in Sources */,
+				9795CE6A1D18FB2F00D5283A /* BlockstackClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		971FD3801D1652970048F537 /* PBXTargetDependency */ = {
+		9795CE671D18FB2F00D5283A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 971FD3721D1652970048F537 /* blockstack-client */;
-			targetProxy = 971FD37F1D1652970048F537 /* PBXContainerItemProxy */;
+			target = 9795CE591D18FB2F00D5283A /* BlockstackClient */;
+			targetProxy = 9795CE661D18FB2F00D5283A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		971FD3851D1652970048F537 /* Debug */ = {
+		9795CE6C1D18FB2F00D5283A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -265,7 +265,7 @@
 			};
 			name = Debug;
 		};
-		971FD3861D1652970048F537 /* Release */ = {
+		9795CE6D1D18FB2F00D5283A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -307,54 +307,54 @@
 			};
 			name = Release;
 		};
-		971FD3881D1652970048F537 /* Debug */ = {
+		9795CE6F1D18FB2F00D5283A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "blockstack-client/Info.plist";
+				INFOPLIST_FILE = BlockstackClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.blockstack.blockstack-client";
+				PRODUCT_BUNDLE_IDENTIFIER = org.blockstack.BlockstackClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		971FD3891D1652970048F537 /* Release */ = {
+		9795CE701D18FB2F00D5283A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "blockstack-client/Info.plist";
+				INFOPLIST_FILE = BlockstackClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.blockstack.blockstack-client";
+				PRODUCT_BUNDLE_IDENTIFIER = org.blockstack.BlockstackClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		971FD38B1D1652970048F537 /* Debug */ = {
+		9795CE721D18FB2F00D5283A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "blockstack-clientTests/Info.plist";
+				INFOPLIST_FILE = BlockstackClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.blockstack.blockstack-clientTests";
+				PRODUCT_BUNDLE_IDENTIFIER = org.blockstack.BlockstackClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		971FD38C1D1652970048F537 /* Release */ = {
+		9795CE731D18FB2F00D5283A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "blockstack-clientTests/Info.plist";
+				INFOPLIST_FILE = BlockstackClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.blockstack.blockstack-clientTests";
+				PRODUCT_BUNDLE_IDENTIFIER = org.blockstack.BlockstackClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -362,32 +362,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		971FD36D1D1652970048F537 /* Build configuration list for PBXProject "blockstack-client" */ = {
+		9795CE541D18FB2E00D5283A /* Build configuration list for PBXProject "BlockstackClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				971FD3851D1652970048F537 /* Debug */,
-				971FD3861D1652970048F537 /* Release */,
+				9795CE6C1D18FB2F00D5283A /* Debug */,
+				9795CE6D1D18FB2F00D5283A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		971FD3871D1652970048F537 /* Build configuration list for PBXNativeTarget "blockstack-client" */ = {
+		9795CE6E1D18FB2F00D5283A /* Build configuration list for PBXNativeTarget "BlockstackClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				971FD3881D1652970048F537 /* Debug */,
-				971FD3891D1652970048F537 /* Release */,
+				9795CE6F1D18FB2F00D5283A /* Debug */,
+				9795CE701D18FB2F00D5283A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		971FD38A1D1652970048F537 /* Build configuration list for PBXNativeTarget "blockstack-clientTests" */ = {
+		9795CE711D18FB2F00D5283A /* Build configuration list for PBXNativeTarget "BlockstackClientTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				971FD38B1D1652970048F537 /* Debug */,
-				971FD38C1D1652970048F537 /* Release */,
+				9795CE721D18FB2F00D5283A /* Debug */,
+				9795CE731D18FB2F00D5283A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 971FD36A1D1652970048F537 /* Project object */;
+	rootObject = 9795CE511D18FB2E00D5283A /* Project object */;
 }

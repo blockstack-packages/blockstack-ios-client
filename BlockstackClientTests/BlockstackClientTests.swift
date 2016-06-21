@@ -1,15 +1,15 @@
 //
-//  blockstack_clientTests.swift
-//  blockstack-clientTests
+//  BlockstackClientTests.swift
+//  BlockstackClientTests
 //
-//  Created by Jorge Tapia on 6/19/16.
-//  Copyright © 2016 Blockstack. All rights reserved.
+//  Created by Jorge Tapia on 6/21/16.
+//  Copyright © 2016 Blockstack.org. All rights reserved.
 //
 
 import XCTest
-@testable import blockstack_client
+@testable import BlockstackClient
 
-class blockstack_clientTests: XCTestCase {
+class BlockstackClientTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
