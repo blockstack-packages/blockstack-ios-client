@@ -11,6 +11,8 @@
 		9795CE5E1D18FB2F00D5283A /* BlockstackClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9795CE5D1D18FB2F00D5283A /* BlockstackClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9795CE651D18FB2F00D5283A /* BlockstackClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9795CE5A1D18FB2F00D5283A /* BlockstackClient.framework */; };
 		9795CE6A1D18FB2F00D5283A /* BlockstackClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9795CE691D18FB2F00D5283A /* BlockstackClientTests.swift */; };
+		97D916CE1D219B5A00307163 /* BlockstackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D916CD1D219B5A00307163 /* BlockstackClient.swift */; };
+		97D9170A1D21B7DD00307163 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D917091D21B7DD00307163 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		9795CE641D18FB2F00D5283A /* BlockstackClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockstackClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9795CE691D18FB2F00D5283A /* BlockstackClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockstackClientTests.swift; sourceTree = "<group>"; };
 		9795CE6B1D18FB2F00D5283A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97D916CD1D219B5A00307163 /* BlockstackClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockstackClient.swift; sourceTree = "<group>"; };
+		97D917091D21B7DD00307163 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		9EB4100C67F146F4EB45E7B9 /* Pods-BlockstackClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockstackClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockstackClient/Pods-BlockstackClient.release.xcconfig"; sourceTree = "<group>"; };
 		DDD1BD9B13DD5E64BFB40943 /* Pods-BlockstackClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockstackClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockstackClient/Pods-BlockstackClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +92,8 @@
 			children = (
 				9795CE5D1D18FB2F00D5283A /* BlockstackClient.h */,
 				9795CE5F1D18FB2F00D5283A /* Info.plist */,
+				97D917091D21B7DD00307163 /* Endpoints.swift */,
+				97D916CD1D219B5A00307163 /* BlockstackClient.swift */,
 			);
 			path = BlockstackClient;
 			sourceTree = "<group>";
@@ -253,6 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97D916CE1D219B5A00307163 /* BlockstackClient.swift in Sources */,
+				97D9170A1D21B7DD00307163 /* Endpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +378,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDD1BD9B13DD5E64BFB40943 /* Pods-BlockstackClient.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -380,6 +389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.blockstack.BlockstackClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -387,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9EB4100C67F146F4EB45E7B9 /* Pods-BlockstackClient.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
