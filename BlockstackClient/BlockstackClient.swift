@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 /// iOS client for blockstack-server.
 public struct BlockstackClient {

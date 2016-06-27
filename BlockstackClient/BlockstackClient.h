@@ -10,5 +10,3 @@
 
 FOUNDATION_EXPORT double BlockstackClientVersionNumber;
 FOUNDATION_EXPORT const unsigned char BlockstackClientVersionString[];
-
-@import SwiftyJSON;
