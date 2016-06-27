@@ -18,9 +18,13 @@ public struct BlockstackClient {
     /// Onename API app secret.
     private static var appSecret: String?
     
-    /// Error domain for BlockstackClient errors.
-    private static let errorDomain = "BlockstackClientErrorDomain"
+    /// Prevents default instantiation
+    private init() {}
     
+    /// Initializes the Blockstack client for iOS.
+    /// - Parameters:
+    ///     - appId: The app id obtained from the [Onename API](http://api.onename.com).
+    ///     - appSecret: The app secrect obtained from the [Onename API](http://api.onename.com).
     public static func initialize(appId appId: String?, appSecret: String?) {
         self.appId = appId
         self.appSecret = appSecret
@@ -64,13 +68,13 @@ extension BlockstackClient {
     ///     - users: Username(s) to look up.
     ///     - completion: Closure containing an object with a top-level key for each username looked up or an error.
     ///                   Each top-level key contains an sub-object that has a "profile" field and a "verifications" field.
-    public static func lookup(users: [String], completion: (response: JSON?, error: NSError?) -> Void) {
+    public static func lookup(users users: [String], completion: (response: JSON?, error: NSError?) -> Void) {
         if clientIsValid() {
             if let lookupURL = NSURL(string: "\(Endpoints.lookup)/\(users.joinWithSeparator(","))") {
                 let request = NSMutableURLRequest(URL: lookupURL)
                 request.setValue(getAuthenticationValue(), forHTTPHeaderField: "Authorization")
                 
-                let lookupTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+                let searchTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
                     if error != nil {
                         completion(response: nil, error: error)
                         return
@@ -81,7 +85,68 @@ extension BlockstackClient {
                     }
                 }
                 
-                lookupTask.resume()
+                searchTask.resume()
+            }
+        } else {
+            print("Client is not valid. Did you forget to initialize the client?")
+        }
+    }
+    
+    /// Takes in a search query and returns a list of results that match the search.
+    /// The query is matched against +usernames, full names, and twitter handles by default.
+    /// It's also possible to explicitly search verified Twitter, Facebook, Github accounts, and verified domains.
+    /// This can be done by using search queries like twitter:itsProf, facebook:g3lepage, github:shea256, domain:muneebali.com
+    ///
+    /// - Parameters:
+    ///     - query: The text to search for.
+    ///     - completion: Closure containing an array of results, where each result has a "profile" object or an error.
+    public static func search(query query: String, completion: (response: JSON?, error: NSError?) -> Void) {
+        if clientIsValid() {
+            if let searchURL = NSURL(string: "\(Endpoints.search)\(query)") {
+                let request = NSMutableURLRequest(URL: searchURL)
+                request.setValue(getAuthenticationValue(), forHTTPHeaderField: "Authorization")
+                
+                let searchTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
+                    if error != nil {
+                        completion(response: nil, error: error)
+                        return
+                    }
+                    
+                    if let data = data {
+                        completion(response: JSON(data: data), error: nil)
+                    }
+                }
+                
+                searchTask.resume()
+            }
+        } else {
+            print("Client is not valid. Did you forget to initialize the client?")
+        }
+    }
+    
+    /// Returns an object with "stats", and "usernames".
+    /// "stats" is a sub-object which in turn contains a "registrations" field that reflects a running count of the total users registered.
+    /// "usernames" is a list of all usernames in the namespace.
+    ///
+    /// - Parameter completion: Closure with and object that contains "stats" and "usernames" or an error.
+    public static func allUsers(completion: (response: JSON?, error: NSError?) -> Void) {
+        if clientIsValid() {
+            if let allUsersURL = NSURL(string: Endpoints.allUsers) {
+                let request = NSMutableURLRequest(URL: allUsersURL)
+                request.setValue(getAuthenticationValue(), forHTTPHeaderField: "Authorization")
+                
+                let allUsersTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
+                    if error != nil {
+                        completion(response: nil, error: error)
+                        return
+                    }
+                    
+                    if let data = data {
+                        completion(response: JSON(data: data), error: nil)
+                    }
+                }
+                
+                allUsersTask.resume()
             }
         } else {
             print("Client is not valid. Did you forget to initialize the client?")
