@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		486639B94403772A5E5BC125 /* Pods_BlockstackClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128A3AEAD804960D7B2C598C /* Pods_BlockstackClient.framework */; };
 		9795CE5E1D18FB2F00D5283A /* BlockstackClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9795CE5D1D18FB2F00D5283A /* BlockstackClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9795CE651D18FB2F00D5283A /* BlockstackClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9795CE5A1D18FB2F00D5283A /* BlockstackClient.framework */; };
 		9795CE6A1D18FB2F00D5283A /* BlockstackClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9795CE691D18FB2F00D5283A /* BlockstackClientTests.swift */; };
@@ -23,12 +24,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		128A3AEAD804960D7B2C598C /* Pods_BlockstackClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockstackClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9795CE5A1D18FB2F00D5283A /* BlockstackClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockstackClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9795CE5D1D18FB2F00D5283A /* BlockstackClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockstackClient.h; sourceTree = "<group>"; };
 		9795CE5F1D18FB2F00D5283A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9795CE641D18FB2F00D5283A /* BlockstackClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockstackClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9795CE691D18FB2F00D5283A /* BlockstackClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockstackClientTests.swift; sourceTree = "<group>"; };
 		9795CE6B1D18FB2F00D5283A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EB4100C67F146F4EB45E7B9 /* Pods-BlockstackClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockstackClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockstackClient/Pods-BlockstackClient.release.xcconfig"; sourceTree = "<group>"; };
+		DDD1BD9B13DD5E64BFB40943 /* Pods-BlockstackClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockstackClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockstackClient/Pods-BlockstackClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486639B94403772A5E5BC125 /* Pods_BlockstackClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +55,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		566D87C132D80E12808692D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				128A3AEAD804960D7B2C598C /* Pods_BlockstackClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9795CE501D18FB2E00D5283A = {
 			isa = PBXGroup;
 			children = (
 				9795CE5C1D18FB2F00D5283A /* BlockstackClient */,
 				9795CE681D18FB2F00D5283A /* BlockstackClientTests */,
 				9795CE5B1D18FB2F00D5283A /* Products */,
+				9941E90A992DEA62BCF7C229 /* Pods */,
+				566D87C132D80E12808692D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +101,15 @@
 			path = BlockstackClientTests;
 			sourceTree = "<group>";
 		};
+		9941E90A992DEA62BCF7C229 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDD1BD9B13DD5E64BFB40943 /* Pods-BlockstackClient.debug.xcconfig */,
+				9EB4100C67F146F4EB45E7B9 /* Pods-BlockstackClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,10 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9795CE6E1D18FB2F00D5283A /* Build configuration list for PBXNativeTarget "BlockstackClient" */;
 			buildPhases = (
+				2E048A925A9EE097201CBDC7 /* [CP] Check Pods Manifest.lock */,
 				9795CE551D18FB2F00D5283A /* Sources */,
 				9795CE561D18FB2F00D5283A /* Frameworks */,
 				9795CE571D18FB2F00D5283A /* Headers */,
 				9795CE581D18FB2F00D5283A /* Resources */,
+				158C884F3161C480AE2691D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +214,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		158C884F3161C480AE2691D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlockstackClient/Pods-BlockstackClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E048A925A9EE097201CBDC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9795CE551D18FB2F00D5283A /* Sources */ = {
@@ -309,6 +368,7 @@
 		};
 		9795CE6F1D18FB2F00D5283A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD1BD9B13DD5E64BFB40943 /* Pods-BlockstackClient.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -325,6 +385,7 @@
 		};
 		9795CE701D18FB2F00D5283A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EB4100C67F146F4EB45E7B9 /* Pods-BlockstackClient.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -378,6 +439,7 @@
 				9795CE701D18FB2F00D5283A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9795CE711D18FB2F00D5283A /* Build configuration list for PBXNativeTarget "BlockstackClientTests" */ = {
 			isa = XCConfigurationList;
@@ -386,6 +448,7 @@
 				9795CE731D18FB2F00D5283A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
