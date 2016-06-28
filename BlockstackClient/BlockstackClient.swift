@@ -76,7 +76,12 @@ extension BlockstackClient {
                 
                 let searchTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
                     if error != nil {
-                        completion(response: nil, error: error)
+                        if let data = data {
+                            completion(response: JSON(data: data), error: error)
+                        } else {
+                            completion(response: nil, error: error)
+                        }
+                        
                         return
                     }
                     
@@ -108,7 +113,12 @@ extension BlockstackClient {
                 
                 let searchTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
                     if error != nil {
-                        completion(response: nil, error: error)
+                        if let data = data {
+                            completion(response: JSON(data: data), error: error)
+                        } else {
+                            completion(response: nil, error: error)
+                        }
+                        
                         return
                     }
                     
@@ -124,6 +134,10 @@ extension BlockstackClient {
         }
     }
     
+    // TODO: implement register users
+    // TODO: implement update users
+    // TODO: implement transfer users
+    
     /// Returns an object with "stats", and "usernames".
     /// "stats" is a sub-object which in turn contains a "registrations" field that reflects a running count of the total users registered.
     /// "usernames" is a list of all usernames in the namespace.
@@ -137,7 +151,12 @@ extension BlockstackClient {
                 
                 let allUsersTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
                     if error != nil {
-                        completion(response: nil, error: error)
+                        if let data = data {
+                            completion(response: JSON(data: data), error: error)
+                        } else {
+                            completion(response: nil, error: error)
+                        }
+                        
                         return
                     }
                     
@@ -152,5 +171,127 @@ extension BlockstackClient {
             print("Client is not valid. Did you forget to initialize the client?")
         }
     }
+    
+}
 
+// MARK: - Transaction operations
+
+extension BlockstackClient {
+    
+    // TODO: implement broadcast transactions
+
+}
+
+// MARK: - Address operations
+
+extension BlockstackClient {
+    
+    /// Retrieves the unspent outputs for a given address so they can be used for building transactions.
+    ///
+    /// - Parameters:
+    ///     - address: The address to look up unspent outputs for.
+    ///     - completion: Closure with an array of unspent outputs for a provided address or an error.
+    public static func unspentOutputs(forAddress address: String, completion: (response: JSON?, error: NSError?) -> Void) {
+        if clientIsValid() {
+            if let unspentsURL = NSURL(string: "\(Endpoints.addresses)/\(address)/unspents") {
+                let request = NSMutableURLRequest(URL: unspentsURL)
+                request.setValue(getAuthenticationValue(), forHTTPHeaderField: "Authorization")
+                
+                let unspentsTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
+                    if error != nil {
+                        if let data = data {
+                            completion(response: JSON(data: data), error: error)
+                        } else {
+                            completion(response: nil, error: error)
+                        }
+                        
+                        return
+                    }
+                    
+                    if let data = data {
+                        completion(response: JSON(data: data), error: nil)
+                    }
+                }
+                
+                unspentsTask.resume()
+            }
+        } else {
+            print("Client is not valid. Did you forget to initialize the client?")
+        }
+    }
+    
+    /// Retrieves a list of names owned by the address provided.
+    ///
+    /// - Parameters:
+    ///     - address: The address to look up names owned by.
+    ///     - completion: Closure with an array of the names that the address owns or an error.
+    public static func namesOwned(byAddress address: String, completion: (response: JSON?, error: NSError?) -> Void) {
+        if clientIsValid() {
+            if let namesOwnedURL = NSURL(string: "\(Endpoints.addresses)/\(address)/names") {
+                let request = NSMutableURLRequest(URL: namesOwnedURL)
+                request.setValue(getAuthenticationValue(), forHTTPHeaderField: "Authorization")
+                
+                let namesOwnedTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
+                    if error != nil {
+                        if let data = data {
+                            completion(response: JSON(data: data), error: error)
+                        } else {
+                            completion(response: nil, error: error)
+                        }
+                        
+                        return
+                    }
+                    
+                    if let data = data {
+                        completion(response: JSON(data: data), error: nil)
+                    }
+                }
+                
+                namesOwnedTask.resume()
+            }
+        } else {
+            print("Client is not valid. Did you forget to initialize the client?")
+        }
+    }
+
+}
+
+// MARK: - Domain operations
+
+extension BlockstackClient {
+
+    /// Retrieves a DKIM public key for given domain, using the "blockchainid._domainkey" subdomain DNS record.
+    ///
+    /// - Parameters:
+    ///     - domain: The domain to loop up the DKIM key for.
+    ///     - completion: Closure with a DKIM public key or error.
+    public static func dkimPublicKey(forDomain domain: String, completion: (response: JSON?, error: NSError?) -> Void) {
+        if clientIsValid() {
+            if let dkimPublicKeyURL = NSURL(string: "\(Endpoints.domains)/\(domain)/dkim") {
+                let request = NSMutableURLRequest(URL: dkimPublicKeyURL)
+                request.setValue(getAuthenticationValue(), forHTTPHeaderField: "Authorization")
+                
+                let dkimPublicKeyTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
+                    if error != nil {
+                        if let data = data {
+                            completion(response: JSON(data: data), error: error)
+                        } else {
+                            completion(response: nil, error: error)
+                        }
+                        
+                        return
+                    }
+                    
+                    if let data = data {
+                        completion(response: JSON(data: data), error: nil)
+                    }
+                }
+                
+                dkimPublicKeyTask.resume()
+            }
+        } else {
+            print("Client is not valid. Did you forget to initialize the client?")
+        }
+    }
+    
 }
