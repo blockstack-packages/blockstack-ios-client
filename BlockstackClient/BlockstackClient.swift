@@ -41,7 +41,7 @@ public struct BlockstackClient {
         return false
     }
     
-    /// Processes the app id and app secrets into a valid Authorization header value.
+    /// Processes the app id and app secret into a valid Authorization header value.
     ///
     /// - Returns: A valid Authorization header value based on the app id and app secret.
     private static func getAuthenticationValue() -> String? {
