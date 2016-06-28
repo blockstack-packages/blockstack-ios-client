@@ -36,7 +36,7 @@ The `appId` and `appSecret` values are obtained by signing up for a [Onename API
 To use the client, call any of the provided methods. The documentation has a complete list of methods, parameters and return values. The following example shows how to look up a user based on his or her username:
 
 ```swift
-BlockstackClient.lookup(["itsProf"]) { (response, error) in
+BlockstackClient.lookup(users: ["itsProf"]) { (response, error) in
   if let error = error {
     NSLog("Error: \(error.localizedDescription)", error)
     return
