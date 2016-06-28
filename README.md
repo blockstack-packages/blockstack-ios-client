@@ -18,12 +18,12 @@ end
 
 ####Initialization
 
-To use the client, the first stwp is to import the framework where you need it.
+To use the client, the first step is to import the framework where you need it.
 
 ```swift
 import BlockStackClient
 ```
-Initialize the framework on your app delegate `didFinishLaunchingWithOptions` method.
+Initialize the framework on your app delegate's `didFinishLaunchingWithOptions` method.
 
 ```swift
 BlockstackClient.initialize(appId: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
