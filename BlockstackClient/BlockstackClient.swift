@@ -34,11 +34,7 @@ public struct BlockstackClient {
     ///
     /// - Returns: Boolean value indicating wether the client is valid or not.
     private static func clientIsValid() -> Bool {
-        if appId != nil && appSecret != nil {
-            return true
-        }
-        
-        return false
+        return appId != nil && appSecret != nil
     }
     
     /// Processes the app id and app secret into a valid Authorization header value.
