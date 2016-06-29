@@ -30,7 +30,7 @@ public struct BlockstackClient {
         self.appSecret = appSecret
     }
     
-    /// Detemines if the app id and app secret are set and valid.
+    /// Determines if the app id and app secret are set and valid.
     ///
     /// - Returns: Boolean value indicating wether the client is valid or not.
     private static func clientIsValid() -> Bool {
