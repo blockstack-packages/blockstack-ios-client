@@ -2,7 +2,7 @@
 //  BlockstackClient.swift
 //  BlockstackClient
 //
-//  Created by Jorge Tapia on 6/27/16.
+//  Created by Jorge Tapia (@itsProf) on 6/27/16.
 //  Copyright © 2016 Blockstack.org. All rights reserved.
 //
 
