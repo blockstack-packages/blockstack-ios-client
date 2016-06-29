@@ -66,7 +66,7 @@ extension BlockstackClient {
     ///                   Each top-level key contains an sub-object that has a "profile" field and a "verifications" field.
     public static func lookup(users users: [String], completion: (response: JSON?, error: NSError?) -> Void) {
         if clientIsValid() {
-            if let lookupURL = NSURL(string: "\(Endpoints.lookup)/\(users.joinWithSeparator(","))") {
+            if let lookupURL = NSURL(string: "\(Endpoints.users)/\(users.joinWithSeparator(","))") {
                 let request = NSMutableURLRequest(URL: lookupURL)
                 request.setValue(getAuthenticationValue(), forHTTPHeaderField: "Authorization")
                 
@@ -141,7 +141,7 @@ extension BlockstackClient {
     /// - Parameter completion: Closure with and object that contains "stats" and "usernames" or an error.
     public static func allUsers(completion: (response: JSON?, error: NSError?) -> Void) {
         if clientIsValid() {
-            if let allUsersURL = NSURL(string: Endpoints.allUsers) {
+            if let allUsersURL = NSURL(string: Endpoints.users) {
                 let request = NSMutableURLRequest(URL: allUsersURL)
                 request.setValue(getAuthenticationValue(), forHTTPHeaderField: "Authorization")
                 
