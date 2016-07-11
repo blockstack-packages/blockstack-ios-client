@@ -9,5 +9,4 @@ Add `BlockstackClient` to your `Podfile`:
 
 ```ruby
 pod 'BlockstackClient', :git => 'https://github.com/blockstack/blockstack-ios-client.git'
-end
 ```
