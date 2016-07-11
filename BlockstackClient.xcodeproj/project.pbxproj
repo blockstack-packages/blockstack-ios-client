@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		974FF3631D343AAE0050A75F /* Endpoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 974FF3611D343AAE0050A75F /* Endpoints.h */; };
+		974FF3671D344DFA0050A75F /* Blockstack.h in Headers */ = {isa = PBXBuildFile; fileRef = 974FF3651D344DFA0050A75F /* Blockstack.h */; };
+		974FF3681D344DFA0050A75F /* Blockstack.m in Sources */ = {isa = PBXBuildFile; fileRef = 974FF3661D344DFA0050A75F /* Blockstack.m */; };
 		975306C41D3417FE007FAED4 /* BlockstackClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 975306C31D3417FE007FAED4 /* BlockstackClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1CDCE58A28EF2A67C68D83F /* libPods-BlockstackClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A698EBD3D781272096D668F2 /* libPods-BlockstackClient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B38D3E53E0E80C44BE61C38 /* Pods-BlockstackClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockstackClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockstackClient/Pods-BlockstackClient.release.xcconfig"; sourceTree = "<group>"; };
+		974FF3611D343AAE0050A75F /* Endpoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Endpoints.h; sourceTree = "<group>"; };
+		974FF3651D344DFA0050A75F /* Blockstack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blockstack.h; sourceTree = "<group>"; };
+		974FF3661D344DFA0050A75F /* Blockstack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blockstack.m; sourceTree = "<group>"; };
 		975306C01D3417FE007FAED4 /* BlockstackClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockstackClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		975306C31D3417FE007FAED4 /* BlockstackClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockstackClient.h; sourceTree = "<group>"; };
 		975306C51D3417FE007FAED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				975306C31D3417FE007FAED4 /* BlockstackClient.h */,
+				974FF3651D344DFA0050A75F /* Blockstack.h */,
+				974FF3661D344DFA0050A75F /* Blockstack.m */,
+				974FF3611D343AAE0050A75F /* Endpoints.h */,
 				975306C51D3417FE007FAED4 /* Info.plist */,
 			);
 			path = BlockstackClient;
@@ -83,7 +92,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				974FF3671D344DFA0050A75F /* Blockstack.h in Headers */,
 				975306C41D3417FE007FAED4 /* BlockstackClient.h in Headers */,
+				974FF3631D343AAE0050A75F /* Endpoints.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				974FF3681D344DFA0050A75F /* Blockstack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
