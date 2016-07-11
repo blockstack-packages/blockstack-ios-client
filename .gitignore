@@ -33,6 +33,4 @@ xcuserdata
 Carthage/Build
 
 # CocoaPods
-Pods/*
-!Pods/Pods.xcodeproj
-!Pods/Manifest.lock
+Pods/
