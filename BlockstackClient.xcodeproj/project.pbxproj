@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		974FF3631D343AAE0050A75F /* Endpoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 974FF3611D343AAE0050A75F /* Endpoints.h */; };
-		974FF3671D344DFA0050A75F /* Blockstack.h in Headers */ = {isa = PBXBuildFile; fileRef = 974FF3651D344DFA0050A75F /* Blockstack.h */; };
+		974FF3671D344DFA0050A75F /* Blockstack.h in Headers */ = {isa = PBXBuildFile; fileRef = 974FF3651D344DFA0050A75F /* Blockstack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		974FF3681D344DFA0050A75F /* Blockstack.m in Sources */ = {isa = PBXBuildFile; fileRef = 974FF3661D344DFA0050A75F /* Blockstack.m */; };
 		975306C41D3417FE007FAED4 /* BlockstackClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 975306C31D3417FE007FAED4 /* BlockstackClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1CDCE58A28EF2A67C68D83F /* libPods-BlockstackClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A698EBD3D781272096D668F2 /* libPods-BlockstackClient.a */; };
