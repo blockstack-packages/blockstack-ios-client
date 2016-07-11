@@ -1,12 +1,39 @@
 PODS:
-  - SwiftyJSON (2.3.2)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CoreBitcoin (0.6.8.1):
+    - ISO8601DateFormatter
+    - OpenSSL-Universal (= 1.0.1.16)
+  - ISO8601DateFormatter (0.8)
+  - OpenSSL-Universal (1.0.1.16)
 
 DEPENDENCIES:
-  - SwiftyJSON
+  - AFNetworking (~> 3.0)
+  - CoreBitcoin (from `https://raw.github.com/oleganza/CoreBitcoin/master/CoreBitcoin.podspec`)
+
+EXTERNAL SOURCES:
+  CoreBitcoin:
+    :podspec: https://raw.github.com/oleganza/CoreBitcoin/master/CoreBitcoin.podspec
 
 SPEC CHECKSUMS:
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CoreBitcoin: 4ac6f6a61e543f08399c2fe57496d4fdcbaf74f9
+  ISO8601DateFormatter: 4551b6ce4f83185425f583b0b3feb3c7b59b942c
+  OpenSSL-Universal: 85ef63bf81d0741b03c8719cd29685c37c59518d
 
-PODFILE CHECKSUM: 584bd6ecedf359dfa3226bf251d7624c1a6b54f7
+PODFILE CHECKSUM: d8be7addbae493a4a88924c65872b23dabb18a99
 
 COCOAPODS: 1.0.1
