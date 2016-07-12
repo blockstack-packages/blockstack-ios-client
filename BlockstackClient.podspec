@@ -12,6 +12,4 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '9.2'
   s.source   = { :git => 'https://github.com/blockstack/blockstack-ios-client.git', :tag => s.version }
   s.source_files = 'BlockstackClient'
-  s.dependency = 'CoreBitcoin'
-  s.dependency = 'AFNetworking'
 end
