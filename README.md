@@ -10,10 +10,10 @@ To install [CocoaPods](http://cocoapods.org/), open `Terminal` and run the follo
 $ sudo gem install cocoapods
 ```
 
-Add `BlockstackClient` to your `Podfile`:
+Add `Blockstack` to your `Podfile`:
 
 ```ruby
-pod 'BlockstackClient', :git => 'https://github.com/blockstack/blockstack-ios-client.git'
+pod 'Blockstack', :git => 'https://github.com/blockstack/blockstack-ios-client.git'
 ```
 
 If working with Swift, be sure to include `use_frameworks!` on your `Podfile`.
