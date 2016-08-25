@@ -49,24 +49,15 @@ extension Blockstack {
     ///     - users: Username(s) to look up.
     ///     - completion: Closure containing an object with a top-level key for each username looked up or an error.
     ///                   Each top-level key contains an sub-object that has a "profile" field and a "verifications" field.
-    public func lookup(users users: [String], completion: (response: AnyObject?) -> Void) {
+    public func lookup(users users: [String], completion: (response: AnyObject?, error: NSError?) -> Void) {
         let lookupEndpoint = "\(Endpoints.users)/\(users.joinWithSeparator(","))"
         
         if let authorizationValue = getAuthorizationValue() {
             let headers = ["Authorization": authorizationValue]
             
             Alamofire.request(.GET, lookupEndpoint, headers: headers).responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if let JSON = response.result.value {
-                    completion(response: JSON)
-                }
+                completion(response: response.data, error: response.result.error)
             }
-        } else {
-            completion(response: "The App Id or App Secret are not valid")
         }
     }
     
