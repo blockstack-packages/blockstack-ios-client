@@ -30,7 +30,7 @@ public class Blockstack {
     /// Processes the app id and app secret into a valid Authorization header value.
     ///
     /// - Returns: A valid Authorization header value based on the app id and app secret.
-    private func getAuthenticationValue() -> String? {
+    private func getAuthorizationValue() -> String? {
         let credentialsString = "\(self.appId):\(self.appSecret)"
         let credentialsData = credentialsString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -52,15 +52,21 @@ extension Blockstack {
     public func lookup(users users: [String], completion: (response: AnyObject?) -> Void) {
         let lookupEndpoint = "\(Endpoints.users)/\(users.joinWithSeparator(","))"
         
-        Alamofire.request(.GET, lookupEndpoint, parameters: nil).responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+        if let authorizationValue = getAuthorizationValue() {
+            let headers = ["Authorization": authorizationValue]
             
-            if let JSON = response.result.value {
-                completion(response: JSON)
+            Alamofire.request(.GET, lookupEndpoint, headers: headers).responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    completion(response: JSON)
+                }
             }
+        } else {
+            completion(response: "The App Id or App Secret are not valid")
         }
     }
     
