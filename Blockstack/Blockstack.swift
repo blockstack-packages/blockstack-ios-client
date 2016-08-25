@@ -50,7 +50,9 @@ extension Blockstack {
     ///     - completion: Closure containing an object with a top-level key for each username looked up or an error.
     ///                   Each top-level key contains an sub-object that has a "profile" field and a "verifications" field.
     public func lookup(users users: [String], completion: (response: AnyObject?) -> Void) {
-        Alamofire.request(.GET, "https://httpbin.org/get", parameters: ["foo": "bar"]).responseJSON { response in
+        let lookupEndpoint = "\(Endpoints.users)/\(users.joinWithSeparator(","))"
+        
+        Alamofire.request(.GET, lookupEndpoint, parameters: nil).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // URL response
             print(response.data)     // server data
