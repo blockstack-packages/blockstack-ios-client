@@ -160,3 +160,85 @@ extension Blockstack {
     }
     
 }
+
+// MARK: - Transaction operations
+
+extension Blockstack {
+    
+    /// Takes in a signed transaction (in hex format) and broadcasts it to the network.
+    /// If the transaction is successfully broadcasted, the transaction hash is returned in the response.
+    ///
+    /// - Parameter signedTransaction: A signed transaction in hex format.
+    /// - Parameter completion: Closure with and object that contains a Blockstack server response with a status that is either "success" or "error".
+    public func broadcastTransaction(signedTransaction: String, completion: (response: AnyObject?, error: NSError?) -> Void) {
+        if let authorizationValue = getAuthorizationValue() {
+            let headers = ["Authorization": authorizationValue]
+            let params = ["signed_hex": signedTransaction]
+            
+            Alamofire.request(.POST, Endpoints.transactions, parameters: params, encoding: .JSON, headers: headers).responseJSON { response in
+                completion(response: response.data, error: response.result.error)
+            }
+        }
+    }
+
+}
+
+// MARK: - Address operations
+
+extension Blockstack {
+
+    /// Retrieves the unspent outputs for a given address so they can be used for building transactions.
+    ///
+    /// - Parameters:
+    ///     - address: The address to look up unspent outputs for.
+    ///     - completion: Closure with an array of unspent outputs for a provided address or an error.
+    public func unspentOutputs(forAddress address: String, completion: (response: AnyObject?, error: NSError?) -> Void) {
+        if let authorizationValue = getAuthorizationValue() {
+            let unspentOutputsEndpoint = "\(Endpoints.addresses)/\(address)/unspents"
+            let headers = ["Authorization": authorizationValue]
+            
+            Alamofire.request(.GET, unspentOutputsEndpoint, headers: headers).responseJSON { response in
+                completion(response: response.data, error: response.result.error)
+            }
+        }
+    }
+    
+    /// Retrieves a list of names owned by the address provided.
+    ///
+    /// - Parameters:
+    ///     - address: The address to look up names owned by.
+    ///     - completion: Closure with an array of the names that the address owns or an error.
+    public func namesOwned(byAddress address: String, completion: (response: AnyObject?, error: NSError?) -> Void) {
+        if let authorizationValue = getAuthorizationValue() {
+            let namesOwnedEndpoint = "\(Endpoints.addresses)/\(address)/names"
+            let headers = ["Authorization": authorizationValue]
+            
+            Alamofire.request(.GET, namesOwnedEndpoint, headers: headers).responseJSON { response in
+                completion(response: response.data, error: response.result.error)
+            }
+        }
+    }
+    
+}
+
+// MARK: - Domain operations
+
+extension Blockstack {
+
+    /// Retrieves a DKIM public key for given domain, using the "blockchainid._domainkey" subdomain DNS record.
+    ///
+    /// - Parameters:
+    ///     - domain: The domain to loop up the DKIM key for.
+    ///     - completion: Closure with a DKIM public key or error.
+    public func dkimPublicKey(forDomain domain: String, completion: (response: AnyObject?, error: NSError?) -> Void) {
+        if let authorizationValue = getAuthorizationValue() {
+            let dkimPublicKeyEndpoint = "\(Endpoints.domains)/\(domain)/dkim"
+            let headers = ["Authorization": authorizationValue]
+            
+            Alamofire.request(.GET, dkimPublicKeyEndpoint, headers: headers).responseJSON { response in
+                completion(response: response.data, error: response.result.error)
+            }
+        }
+    }
+    
+}
