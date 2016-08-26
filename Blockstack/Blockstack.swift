@@ -49,7 +49,7 @@ extension Blockstack {
     ///     - users: Username(s) to look up.
     ///     - completion: Closure containing an object with a top-level key for each username looked up or an error.
     ///                   Each top-level key contains an sub-object that has a "profile" field and a "verifications" field.
-    public func lookup(users: [String], completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func lookup(users: [String], completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let lookupEndpoint = "\(Endpoints.users)/\(users.joined(separator: ","))"
             
@@ -61,9 +61,9 @@ extension Blockstack {
             
             URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if let data = data {
-                    String(data: data, encoding: .utf8)
+                    completion(data, error)
                 }
-            })
+            }).resume()
         }
     }
     
