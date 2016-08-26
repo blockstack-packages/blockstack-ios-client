@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 /// iOS client for blockstack-server.
 public class Blockstack {
@@ -53,10 +52,17 @@ extension Blockstack {
     public func lookup(users: [String], completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let lookupEndpoint = "\(Endpoints.users)/\(users.joined(separator: ","))"
-            let headers = ["Authorization": authorizationValue]
             
-            Alamofire.request(lookupEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
+            
+            var request = URLRequest(url: URL(string: lookupEndpoint)!)
+            request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "POST"
+            
+            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data {
+                    String(data: data, encoding: .utf8)
+                }
             })
         }
     }
@@ -74,9 +80,9 @@ extension Blockstack {
             let searchEndpoint = "\(Endpoints.search)\(query)"
             let headers = ["Authorization": authorizationValue]
             
-            Alamofire.request(searchEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
+            /*Alamofire.request(searchEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
                 completion(response.data, response.result.error)
-            })
+            })*/
         }
     }
     
@@ -97,9 +103,9 @@ extension Blockstack {
                 params["profile"] = profile
             }
             
-            Alamofire.request(Endpoints.users, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
+            /*Alamofire.request(Endpoints.users, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
                 completion(response.data, response.result.error)
-            })
+            })*/
         }
     }
     
@@ -117,9 +123,9 @@ extension Blockstack {
             
             let params: [String: Any] = ["profile": profileData, "owner_pubkey": ownerPublicKey]
             
-            Alamofire.request(updateEndpoint, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
+            /*Alamofire.request(updateEndpoint, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
                 completion(response.data, response.result.error)
-            })
+            })*/
         }
     }
     
@@ -137,9 +143,9 @@ extension Blockstack {
             let headers = ["Authorization": authorizationValue]
             let params: [String: Any] = ["transfer_address": transferAddress, "owner_pubkey": ownerPublicKey]
             
-            Alamofire.request(updateEndpoint, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
+            /*Alamofire.request(updateEndpoint, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
                 completion(response.data, response.result.error)
-            })
+            })*/
         }
     }
     
@@ -152,9 +158,9 @@ extension Blockstack {
         if let authorizationValue = getAuthorizationValue() {
             let headers = ["Authorization": authorizationValue]
             
-            Alamofire.request(Endpoints.users, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
+            /*Alamofire.request(Endpoints.users, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
                 completion(response.data, response.result.error)
-            })
+            })*/
         }
     }
     
@@ -174,9 +180,9 @@ extension Blockstack {
             let headers = ["Authorization": authorizationValue]
             let params = ["signed_hex": signedTransaction]
             
-            Alamofire.request(Endpoints.transactions, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
+            /*Alamofire.request(Endpoints.transactions, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
                 completion(response.data, response.result.error)
-            })
+            })*/
         }
     }
     
@@ -196,9 +202,9 @@ extension Blockstack {
             let unspentOutputsEndpoint = "\(Endpoints.addresses)/\(address)/unspents"
             let headers = ["Authorization": authorizationValue]
             
-            Alamofire.request(unspentOutputsEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
+            /*Alamofire.request(unspentOutputsEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
                 completion(response.data, response.result.error)
-            })
+            })*/
         }
     }
     
@@ -212,9 +218,9 @@ extension Blockstack {
             let namesOwnedEndpoint = "\(Endpoints.addresses)/\(address)/names"
             let headers = ["Authorization": authorizationValue]
             
-            Alamofire.request(namesOwnedEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
+            /*Alamofire.request(namesOwnedEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
                 completion(response.data, response.result.error)
-            })
+            })*/
         }
     }
     
@@ -234,9 +240,9 @@ extension Blockstack {
             let dkimPublicKeyEndpoint = "\(Endpoints.domains)/\(domain)/dkim"
             let headers = ["Authorization": authorizationValue]
             
-            Alamofire.request(dkimPublicKeyEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
+            /*Alamofire.request(dkimPublicKeyEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
                 completion(response.data, response.result.error)
-            })
+            })*/
         }
     }
     
