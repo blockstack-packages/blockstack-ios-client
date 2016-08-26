@@ -49,7 +49,7 @@ extension Blockstack {
     ///     - users: Username(s) to look up.
     ///     - completion: Closure containing an object with a top-level key for each username looked up or an error.
     ///                   Each top-level key contains an sub-object that has a "profile" field and a "verifications" field.
-    public func lookup(users: [String], completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
+    public func lookup(_ users: [String], completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let lookupEndpoint = "\(Endpoints.users)/\(users.joined(separator: ","))"
             
@@ -75,7 +75,7 @@ extension Blockstack {
     /// - Parameters:
     ///     - query: The text to search for.
     ///     - completion: Closure containing an array of results, where each result has a "profile" object or an error.
-    public func search(query: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func search(_ query: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let searchEndpoint = "\(Endpoints.search)\(query)"
             let headers = ["Authorization": authorizationValue]
@@ -93,7 +93,7 @@ extension Blockstack {
     ///     - recipientAddress: Bitcoin address of the new owner address.
     ///     - profileData: The data to be associated with the blockchain ID.
     ///     - completion: Closure a response that could include an object with an unsigned transaction "unsigned_tx" in hex format.
-    public func registerUser(username: String, recipientAddress: String, profileData: [String: AnyObject]?, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func registerUser(_ username: String, recipientAddress: String, profileData: [String: AnyObject]?, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let headers = ["Authorization": authorizationValue]
             
@@ -116,7 +116,7 @@ extension Blockstack {
     ///     - profileData: The data to be associated with the blockchain ID.
     ///     - ownerPublicKey: Public key of the Bitcoin address that currently owns the username.
     ///     - completion: Closure with a response that could include an object with an unsigned transaction "unsigned_tx" in hex format.
-    public func updateUser(username: String, profileData: [String: AnyObject], ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func updateUser(_ username: String, profileData: [String: AnyObject], ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let updateEndpoint = "\(Endpoints.users)/\(username)/update)"
             let headers = ["Authorization": authorizationValue]
@@ -136,7 +136,7 @@ extension Blockstack {
     ///     - transferAddress: Bitcoin address of the new owner address.
     ///     - ownerPublicKey: Public key of the Bitcoin address that currently owns the username.
     ///     - completion: Closure with a response that could include an object with an unsigned transaction "unsigned_tx" in hex format.
-    public func transferUser(username: String, transferAddress: String, ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func transferUser(_ username: String, transferAddress: String, ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let updateEndpoint = "\(Endpoints.users)/\(username)/update)"
             
@@ -154,7 +154,7 @@ extension Blockstack {
     /// "usernames" is a list of all usernames in the namespace.
     ///
     /// - Parameter completion: Closure with and object that contains "stats" and "usernames" or an error.
-    public func allUsers(completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func allUsers(_ completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let headers = ["Authorization": authorizationValue]
             
@@ -175,7 +175,7 @@ extension Blockstack {
     ///
     /// - Parameter signedTransaction: A signed transaction in hex format.
     /// - Parameter completion: Closure with and object that contains a Blockstack server response with a status that is either "success" or "error".
-    public func broadcastTransaction(signedTransaction: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func broadcastTransaction(_ signedTransaction: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let headers = ["Authorization": authorizationValue]
             let params = ["signed_hex": signedTransaction]
