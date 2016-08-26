@@ -49,7 +49,7 @@ If you are working with Swift 3, please follow this instructions:
 
 * Clone the client code from branch `swift3`.
 * Copy the client directory inside your project's directory.
-* Drag the `Blockstack.xcodeproj` file into your project. Yes, it should be nested under your project (blue project icon).
+* Drag the `Blockstack.swift` and `Endpoints.swift` files into your project. We suggest creating a new group for them for better organization.
 * Select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
 * In the tab bar at the top of that window, open the "General" panel.
 * Click on the + button under the "Embedded Binaries" section.
