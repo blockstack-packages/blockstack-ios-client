@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.3'
   s.source   = { :git => 'https://github.com/blockstack/blockstack-ios-client.git', :tag => s.version }
   s.source_files = 'Blockstack/'
-  s.dependency 'Alamofire'
+  s.dependency 'Alamofire', git: 'https://github.com/Alamofire/Alamofire.git', branch: 'swift3'
 end
