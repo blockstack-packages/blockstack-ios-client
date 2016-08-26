@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 /// iOS client for blockstack-server.
-open class Blockstack {
+public class Blockstack {
     
     /// Onename API app id.
     fileprivate var appId: String?
@@ -22,7 +22,7 @@ open class Blockstack {
     /// - Parameters:
     ///     - appId: The app id obtained from the [Onename API](http://api.onename.com).
     ///     - appSecret: The app secrect obtained from the [Onename API](http://api.onename.com).
-    open init(appId: String, appSecret: String) {
+    public init(appId: String, appSecret: String) {
         self.appId = appId
         self.appSecret = appSecret
     }
@@ -50,7 +50,7 @@ extension Blockstack {
     ///     - users: Username(s) to look up.
     ///     - completion: Closure containing an object with a top-level key for each username looked up or an error.
     ///                   Each top-level key contains an sub-object that has a "profile" field and a "verifications" field.
-    open func lookup(users: [String], completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func lookup(users: [String], completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let lookupEndpoint = "\(Endpoints.users)/\(users.joined(separator: ","))"
             let headers = ["Authorization": authorizationValue]
@@ -69,7 +69,7 @@ extension Blockstack {
     /// - Parameters:
     ///     - query: The text to search for.
     ///     - completion: Closure containing an array of results, where each result has a "profile" object or an error.
-    open func search(query: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func search(query: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let searchEndpoint = "\(Endpoints.search)\(query)"
             let headers = ["Authorization": authorizationValue]
@@ -87,7 +87,7 @@ extension Blockstack {
     ///     - recipientAddress: Bitcoin address of the new owner address.
     ///     - profileData: The data to be associated with the blockchain ID.
     ///     - completion: Closure a response that could include an object with an unsigned transaction "unsigned_tx" in hex format.
-    open func registerUser(username: String, recipientAddress: String, profileData: [String: AnyObject]?, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func registerUser(username: String, recipientAddress: String, profileData: [String: AnyObject]?, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let headers = ["Authorization": authorizationValue]
             
@@ -110,7 +110,7 @@ extension Blockstack {
     ///     - profileData: The data to be associated with the blockchain ID.
     ///     - ownerPublicKey: Public key of the Bitcoin address that currently owns the username.
     ///     - completion: Closure with a response that could include an object with an unsigned transaction "unsigned_tx" in hex format.
-    open func updateUser(username: String, profileData: [String: AnyObject], ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func updateUser(username: String, profileData: [String: AnyObject], ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let updateEndpoint = "\(Endpoints.users)/\(username)/update)"
             let headers = ["Authorization": authorizationValue]
@@ -130,7 +130,7 @@ extension Blockstack {
     ///     - transferAddress: Bitcoin address of the new owner address.
     ///     - ownerPublicKey: Public key of the Bitcoin address that currently owns the username.
     ///     - completion: Closure with a response that could include an object with an unsigned transaction "unsigned_tx" in hex format.
-    open func transferUser(username: String, transferAddress: String, ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func transferUser(username: String, transferAddress: String, ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let updateEndpoint = "\(Endpoints.users)/\(username)/update)"
             
@@ -148,7 +148,7 @@ extension Blockstack {
     /// "usernames" is a list of all usernames in the namespace.
     ///
     /// - Parameter completion: Closure with and object that contains "stats" and "usernames" or an error.
-    open func allUsers(completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func allUsers(completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let headers = ["Authorization": authorizationValue]
             
@@ -169,7 +169,7 @@ extension Blockstack {
     ///
     /// - Parameter signedTransaction: A signed transaction in hex format.
     /// - Parameter completion: Closure with and object that contains a Blockstack server response with a status that is either "success" or "error".
-    open func broadcastTransaction(signedTransaction: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func broadcastTransaction(signedTransaction: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let headers = ["Authorization": authorizationValue]
             let params = ["signed_hex": signedTransaction]
@@ -191,7 +191,7 @@ extension Blockstack {
     /// - Parameters:
     ///     - address: The address to look up unspent outputs for.
     ///     - completion: Closure with an array of unspent outputs for a provided address or an error.
-    open func unspentOutputs(forAddress address: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func unspentOutputs(forAddress address: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let unspentOutputsEndpoint = "\(Endpoints.addresses)/\(address)/unspents"
             let headers = ["Authorization": authorizationValue]
@@ -207,7 +207,7 @@ extension Blockstack {
     /// - Parameters:
     ///     - address: The address to look up names owned by.
     ///     - completion: Closure with an array of the names that the address owns or an error.
-    open func namesOwned(byAddress address: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func namesOwned(byAddress address: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let namesOwnedEndpoint = "\(Endpoints.addresses)/\(address)/names"
             let headers = ["Authorization": authorizationValue]
@@ -229,7 +229,7 @@ extension Blockstack {
     /// - Parameters:
     ///     - domain: The domain to loop up the DKIM key for.
     ///     - completion: Closure with a DKIM public key or error.
-    open func dkimPublicKey(forDomain domain: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func dkimPublicKey(forDomain domain: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let dkimPublicKeyEndpoint = "\(Endpoints.domains)/\(domain)/dkim"
             let headers = ["Authorization": authorizationValue]

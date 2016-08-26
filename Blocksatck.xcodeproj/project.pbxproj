@@ -10,6 +10,7 @@
 		97D4922F1D70E62D004015C8 /* Blocksatck.h in Headers */ = {isa = PBXBuildFile; fileRef = 97D4922D1D70E62D004015C8 /* Blocksatck.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97D492391D70E66E004015C8 /* Blockstack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D492371D70E66E004015C8 /* Blockstack.swift */; };
 		97D4923A1D70E66E004015C8 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D492381D70E66E004015C8 /* Endpoints.swift */; };
+		97D493241D70E8B7004015C8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D493171D70E73F004015C8 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97D493241D70E8B7004015C8 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
