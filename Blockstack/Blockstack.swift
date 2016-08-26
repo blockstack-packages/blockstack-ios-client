@@ -53,11 +53,9 @@ extension Blockstack {
         if let authorizationValue = getAuthorizationValue() {
             let lookupEndpoint = "\(Endpoints.users)/\(users.joined(separator: ","))"
             
-            
             var request = URLRequest(url: URL(string: lookupEndpoint)!)
             request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpMethod = "POST"
             
             URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if let data = data {

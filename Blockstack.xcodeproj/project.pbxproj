@@ -12,23 +12,12 @@
 		97D493591D70EAC1004015C8 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D493571D70EAC1004015C8 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		97D493A91D70F5C5004015C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97D493A51D70F5C5004015C8 /* Blockstack.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 97D493311D70EA83004015C8;
-			remoteInfo = Blockstack;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		97D493311D70EA83004015C8 /* Blockstack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blockstack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D493341D70EA83004015C8 /* Blockstack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blockstack.h; sourceTree = "<group>"; };
 		97D493351D70EA83004015C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97D493561D70EAC1004015C8 /* Blockstack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blockstack.swift; sourceTree = "<group>"; };
 		97D493571D70EAC1004015C8 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		97D493A51D70F5C5004015C8 /* Blockstack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Blockstack.xcodeproj; path = "../Demo Swift3/blockstack-ios-client/Blockstack.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +34,6 @@
 		97D493271D70EA83004015C8 = {
 			isa = PBXGroup;
 			children = (
-				97D493A51D70F5C5004015C8 /* Blockstack.xcodeproj */,
 				97D493331D70EA83004015C8 /* Blockstack */,
 				97D493321D70EA83004015C8 /* Products */,
 			);
@@ -68,14 +56,6 @@
 				97D493351D70EA83004015C8 /* Info.plist */,
 			);
 			path = Blockstack;
-			sourceTree = "<group>";
-		};
-		97D493A61D70F5C5004015C8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				97D493AA1D70F5C5004015C8 /* Blockstack.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,28 +116,12 @@
 			mainGroup = 97D493271D70EA83004015C8;
 			productRefGroup = 97D493321D70EA83004015C8 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 97D493A61D70F5C5004015C8 /* Products */;
-					ProjectRef = 97D493A51D70F5C5004015C8 /* Blockstack.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				97D493301D70EA83004015C8 /* Blockstack */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		97D493AA1D70F5C5004015C8 /* Blockstack.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Blockstack.framework;
-			remoteRef = 97D493A91D70F5C5004015C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		97D4932F1D70EA83004015C8 /* Resources */ = {
