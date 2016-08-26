@@ -22,3 +22,23 @@ Install the pod:
 ```
 $ pod install
 ```
+
+###Usage example
+
+To use the Blockstack client on your iOS application, initialize it with your app ID and app secret obtained by signing up for an account at the [Onename API](https://api.onename.com/) site.
+
+This is how to lookup users:
+
+```swift
+let client = Blockstack(appId: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
+client.lookup(users: ["itsProf", "guylepage3"]) { (response, error) in
+    if let error = error {
+        NSLog("Error \(error.localizedDescription)", error)
+        return
+    }
+            
+    if let response = response as? NSData {
+        print(String(data: response, encoding: NSUTF8StringEncoding))
+    }
+}
+```
