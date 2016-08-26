@@ -42,3 +42,17 @@ client.lookup(users: ["itsProf", "guylepage3"]) { (response, error) in
     }
 }
 ```
+
+### Swift 3
+
+If you are working with Swift 3, please follow this instructions:
+
+* Clone the client code from branch `swift3`.
+* Copy the client directory inside your project's directory.
+* Drag the `Blockstack.xcodeproj` file into your project. Yes, it should be nested under your project (blue project icon).
+* Select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
+* In the tab bar at the top of that window, open the "General" panel.
+* Click on the + button under the "Embedded Binaries" section.
+* Embed the Blockstack client framework
+
+When Xcode 8 and [CocoaPods](http://cocoapods.org/) release their GA versions, we will support it.
