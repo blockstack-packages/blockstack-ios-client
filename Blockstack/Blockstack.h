@@ -2,7 +2,7 @@
 //  Blockstack.h
 //  Blockstack
 //
-//  Created by Jorge Tapia on 8/25/16.
+//  Created by Jorge Tapia on 8/26/16.
 //  Copyright © 2016 Blockstack.org. All rights reserved.
 //
 

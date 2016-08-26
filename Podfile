@@ -1,6 +1,6 @@
-platform :ios, '9.3'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'Blockstack' do
-	pod 'Alamofire', '~> 3.4'
+	pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift3'
 end
