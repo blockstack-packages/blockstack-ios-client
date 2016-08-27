@@ -73,14 +73,19 @@ extension Blockstack {
     /// - Parameters:
     ///     - query: The text to search for.
     ///     - completion: Closure containing an array of results, where each result has a "profile" object or an error.
-    public func search(_ query: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func search(_ query: String, completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let searchEndpoint = "\(Endpoints.search)\(query)"
-            let headers = ["Authorization": authorizationValue]
             
-            /*Alamofire.request(searchEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
-            })*/
+            var request = URLRequest(url: URL(string: searchEndpoint)!)
+            request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data {
+                    completion(data, error)
+                }
+            }).resume()
         }
     }
     
@@ -91,19 +96,28 @@ extension Blockstack {
     ///     - recipientAddress: Bitcoin address of the new owner address.
     ///     - profileData: The data to be associated with the blockchain ID.
     ///     - completion: Closure a response that could include an object with an unsigned transaction "unsigned_tx" in hex format.
-    public func registerUser(_ username: String, recipientAddress: String, profileData: [String: AnyObject]?, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func registerUser(_ username: String, recipientAddress: String, profileData: [String: Any]?, completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
-            let headers = ["Authorization": authorizationValue]
-            
             var params: [String: Any] = ["username": username, "recipient_address": recipientAddress]
             
             if let profile = profileData {
                 params["profile"] = profile
             }
             
-            /*Alamofire.request(Endpoints.users, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
-            })*/
+            do {
+                var request = URLRequest(url: URL(string: Endpoints.users)!)
+                request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
+                
+                URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                    if let data = data {
+                        completion(data, error)
+                    }
+                }).resume()
+            } catch {
+                debugPrint(error.localizedDescription, error)
+            }
         }
     }
     
@@ -114,16 +128,25 @@ extension Blockstack {
     ///     - profileData: The data to be associated with the blockchain ID.
     ///     - ownerPublicKey: Public key of the Bitcoin address that currently owns the username.
     ///     - completion: Closure with a response that could include an object with an unsigned transaction "unsigned_tx" in hex format.
-    public func updateUser(_ username: String, profileData: [String: AnyObject], ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func updateUser(_ username: String, profileData: [String: AnyObject], ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let updateEndpoint = "\(Endpoints.users)/\(username)/update)"
-            let headers = ["Authorization": authorizationValue]
-            
             let params: [String: Any] = ["profile": profileData, "owner_pubkey": ownerPublicKey]
             
-            /*Alamofire.request(updateEndpoint, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
-            })*/
+            do {
+                var request = URLRequest(url: URL(string: updateEndpoint)!)
+                request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
+                
+                URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                    if let data = data {
+                        completion(data, error)
+                    }
+                }).resume()
+            } catch {
+                debugPrint(error.localizedDescription, error)
+            }
         }
     }
     
@@ -134,16 +157,25 @@ extension Blockstack {
     ///     - transferAddress: Bitcoin address of the new owner address.
     ///     - ownerPublicKey: Public key of the Bitcoin address that currently owns the username.
     ///     - completion: Closure with a response that could include an object with an unsigned transaction "unsigned_tx" in hex format.
-    public func transferUser(_ username: String, transferAddress: String, ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func transferUser(_ username: String, transferAddress: String, ownerPublicKey: String, completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let updateEndpoint = "\(Endpoints.users)/\(username)/update)"
-            
-            let headers = ["Authorization": authorizationValue]
             let params: [String: Any] = ["transfer_address": transferAddress, "owner_pubkey": ownerPublicKey]
             
-            /*Alamofire.request(updateEndpoint, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
-            })*/
+            do {
+                var request = URLRequest(url: URL(string: updateEndpoint)!)
+                request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
+                
+                URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                    if let data = data {
+                        completion(data, error)
+                    }
+                }).resume()
+            } catch {
+                debugPrint(error.localizedDescription, error)
+            }
         }
     }
     
@@ -152,13 +184,17 @@ extension Blockstack {
     /// "usernames" is a list of all usernames in the namespace.
     ///
     /// - Parameter completion: Closure with and object that contains "stats" and "usernames" or an error.
-    public func allUsers(_ completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func allUsers(_ completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
-            let headers = ["Authorization": authorizationValue]
+            var request = URLRequest(url: URL(string: Endpoints.users)!)
+            request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
-            /*Alamofire.request(Endpoints.users, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
-            })*/
+            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data {
+                    completion(data, error)
+                }
+            }).resume()
         }
     }
     
@@ -173,14 +209,24 @@ extension Blockstack {
     ///
     /// - Parameter signedTransaction: A signed transaction in hex format.
     /// - Parameter completion: Closure with and object that contains a Blockstack server response with a status that is either "success" or "error".
-    public func broadcastTransaction(_ signedTransaction: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func broadcastTransaction(_ signedTransaction: String, completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
-            let headers = ["Authorization": authorizationValue]
             let params = ["signed_hex": signedTransaction]
             
-            /*Alamofire.request(Endpoints.transactions, withMethod: .post, parameters: params, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
-            })*/
+            do {
+                var request = URLRequest(url: URL(string: Endpoints.transactions)!)
+                request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
+                
+                URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                    if let data = data {
+                        completion(data, error)
+                    }
+                }).resume()
+            } catch {
+                debugPrint(error.localizedDescription, error)
+            }
         }
     }
     
@@ -195,14 +241,19 @@ extension Blockstack {
     /// - Parameters:
     ///     - address: The address to look up unspent outputs for.
     ///     - completion: Closure with an array of unspent outputs for a provided address or an error.
-    public func unspentOutputs(forAddress address: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func unspentOutputs(forAddress address: String, completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let unspentOutputsEndpoint = "\(Endpoints.addresses)/\(address)/unspents"
-            let headers = ["Authorization": authorizationValue]
             
-            /*Alamofire.request(unspentOutputsEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
-            })*/
+            var request = URLRequest(url: URL(string: unspentOutputsEndpoint)!)
+            request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data {
+                    completion(data, error)
+                }
+            }).resume()
         }
     }
     
@@ -211,14 +262,19 @@ extension Blockstack {
     /// - Parameters:
     ///     - address: The address to look up names owned by.
     ///     - completion: Closure with an array of the names that the address owns or an error.
-    public func namesOwned(byAddress address: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func namesOwned(byAddress address: String, completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let namesOwnedEndpoint = "\(Endpoints.addresses)/\(address)/names"
-            let headers = ["Authorization": authorizationValue]
             
-            /*Alamofire.request(namesOwnedEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
-            })*/
+            var request = URLRequest(url: URL(string: namesOwnedEndpoint)!)
+            request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data {
+                    completion(data, error)
+                }
+            }).resume()
         }
     }
     
@@ -233,14 +289,19 @@ extension Blockstack {
     /// - Parameters:
     ///     - domain: The domain to loop up the DKIM key for.
     ///     - completion: Closure with a DKIM public key or error.
-    public func dkimPublicKey(forDomain domain: String, completion: @escaping (_ response: Data?, _ error: NSError?) -> Void) {
+    public func dkimPublicKey(forDomain domain: String, completion: @escaping (_ response: Data?, _ error: Error?) -> Void) {
         if let authorizationValue = getAuthorizationValue() {
             let dkimPublicKeyEndpoint = "\(Endpoints.domains)/\(domain)/dkim"
-            let headers = ["Authorization": authorizationValue]
             
-            /*Alamofire.request(dkimPublicKeyEndpoint, withMethod: .get, parameters: nil, encoding: .json, headers: headers).responseJSON(completionHandler: { (response) in
-                completion(response.data, response.result.error)
-            })*/
+            var request = URLRequest(url: URL(string: dkimPublicKeyEndpoint)!)
+            request.addValue(authorizationValue, forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data {
+                    completion(data, error)
+                }
+            }).resume()
         }
     }
     

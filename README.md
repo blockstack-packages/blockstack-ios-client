@@ -42,3 +42,11 @@ client.lookup(users: ["itsProf", "guylepage3"]) { (response, error) in
     }
 }
 ```
+
+### Swift 3
+
+If you are working with Swift 3, please install the pod from the `swift3` branch:
+
+```ruby
+pod 'Blockstack', :git => 'https://github.com/blockstack/blockstack-ios-client.git', :branch => 'swift3'
+```
