@@ -50,3 +50,18 @@ If you are working with Swift 3, please install the pod from the `swift3` branch
 ```ruby
 pod 'Blockstack', :git => 'https://github.com/blockstack/blockstack-ios-client.git', :branch => 'swift3'
 ```
+
+And this is how looking up users is done in Swift 3:
+
+```swift
+let client = Blockstack(appId: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
+client.lookup(["itsProf", "guylepage3"]) { (data, error) in
+    if let error = error {
+        debugPrint("error.localizedDescription", error)
+    }
+    
+    if let data = data {
+        debugPrint(String(data: data, encoding: .utf8))
+    }
+}
+```
