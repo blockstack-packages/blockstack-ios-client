@@ -45,14 +45,8 @@ client.lookup(users: ["itsProf", "guylepage3"]) { (response, error) in
 
 ### Swift 3
 
-If you are working with Swift 3, please follow this instructions:
+If you are working with Swift 3, please install the pod from the `swift3` branch:
 
-* Clone the client code from branch `swift3`.
-* Copy the client directory inside your project's directory.
-* Drag the `Blockstack.swift` and `Endpoints.swift` files into your project. We suggest creating a new group for them for better organization.
-* Select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
-* In the tab bar at the top of that window, open the "General" panel.
-* Click on the + button under the "Embedded Binaries" section.
-* Embed the Blockstack client framework
-
-When Xcode 8 and [CocoaPods](http://cocoapods.org/) release their GA versions, we will support it.
+```ruby
+pod 'Blockstack', :git => 'https://github.com/blockstack/blockstack-ios-client.git', :branch => 'swift3'
+```
