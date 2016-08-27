@@ -57,7 +57,7 @@ And this is how user lookup is done in Swift 3:
 let client = Blockstack(appId: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
 client.lookup(["itsProf", "guylepage3"]) { (data, error) in
     if let error = error {
-        debugPrint("error.localizedDescription", error)
+        debugPrint(error.localizedDescription, error)
     }
     
     if let data = data {
