@@ -7,139 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B9CEFFAD9F854A07DC49DF0 /* Pods_Blockstack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8833A6ED8F51A3A7F75AC6 /* Pods_Blockstack.framework */; };
-		97AE4A171D6F6134003D95A2 /* Blockstack.h in Headers */ = {isa = PBXBuildFile; fileRef = 97AE4A161D6F6134003D95A2 /* Blockstack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		97AE4A1E1D6F6135003D95A2 /* Blockstack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97AE4A131D6F6134003D95A2 /* Blockstack.framework */; };
-		97AE4A231D6F6135003D95A2 /* BlockstackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE4A221D6F6135003D95A2 /* BlockstackTests.swift */; };
-		97AE4A2E1D6FAD11003D95A2 /* Blockstack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE4A2D1D6FAD11003D95A2 /* Blockstack.swift */; };
-		97AE4A301D6FAD64003D95A2 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE4A2F1D6FAD64003D95A2 /* Endpoints.swift */; };
+		97D493361D70EA83004015C8 /* Blockstack.h in Headers */ = {isa = PBXBuildFile; fileRef = 97D493341D70EA83004015C8 /* Blockstack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97D493581D70EAC1004015C8 /* Blockstack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D493561D70EAC1004015C8 /* Blockstack.swift */; };
+		97D493591D70EAC1004015C8 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D493571D70EAC1004015C8 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		97AE4A1F1D6F6135003D95A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97AE4A0A1D6F6134003D95A2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 97AE4A121D6F6134003D95A2;
-			remoteInfo = Blockstack;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		3A8833A6ED8F51A3A7F75AC6 /* Pods_Blockstack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blockstack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		97AE4A131D6F6134003D95A2 /* Blockstack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blockstack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		97AE4A161D6F6134003D95A2 /* Blockstack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blockstack.h; sourceTree = "<group>"; };
-		97AE4A181D6F6134003D95A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97AE4A1D1D6F6135003D95A2 /* BlockstackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockstackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97AE4A221D6F6135003D95A2 /* BlockstackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockstackTests.swift; sourceTree = "<group>"; };
-		97AE4A241D6F6135003D95A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97AE4A2D1D6FAD11003D95A2 /* Blockstack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blockstack.swift; sourceTree = "<group>"; };
-		97AE4A2F1D6FAD64003D95A2 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		AB6D0C70B9426E115814CE53 /* Pods-Blockstack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blockstack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blockstack/Pods-Blockstack.release.xcconfig"; sourceTree = "<group>"; };
-		AC2F8CE127F9DAFC852CA3DC /* Pods-Blockstack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blockstack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blockstack/Pods-Blockstack.debug.xcconfig"; sourceTree = "<group>"; };
+		97D493311D70EA83004015C8 /* Blockstack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blockstack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97D493341D70EA83004015C8 /* Blockstack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blockstack.h; sourceTree = "<group>"; };
+		97D493351D70EA83004015C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97D493561D70EAC1004015C8 /* Blockstack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blockstack.swift; sourceTree = "<group>"; };
+		97D493571D70EAC1004015C8 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		97AE4A0F1D6F6134003D95A2 /* Frameworks */ = {
+		97D4932D1D70EA83004015C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9CEFFAD9F854A07DC49DF0 /* Pods_Blockstack.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97AE4A1A1D6F6135003D95A2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97AE4A1E1D6F6135003D95A2 /* Blockstack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D3CFD342DB716A96E3CE8FF /* Frameworks */ = {
+		97D493271D70EA83004015C8 = {
 			isa = PBXGroup;
 			children = (
-				3A8833A6ED8F51A3A7F75AC6 /* Pods_Blockstack.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4513EFFF68A6596A87809B7F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AC2F8CE127F9DAFC852CA3DC /* Pods-Blockstack.debug.xcconfig */,
-				AB6D0C70B9426E115814CE53 /* Pods-Blockstack.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		97AE4A091D6F6134003D95A2 = {
-			isa = PBXGroup;
-			children = (
-				97AE4A151D6F6134003D95A2 /* Blockstack */,
-				97AE4A211D6F6135003D95A2 /* BlockstackTests */,
-				97AE4A141D6F6134003D95A2 /* Products */,
-				4513EFFF68A6596A87809B7F /* Pods */,
-				0D3CFD342DB716A96E3CE8FF /* Frameworks */,
+				97D493331D70EA83004015C8 /* Blockstack */,
+				97D493321D70EA83004015C8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		97AE4A141D6F6134003D95A2 /* Products */ = {
+		97D493321D70EA83004015C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97AE4A131D6F6134003D95A2 /* Blockstack.framework */,
-				97AE4A1D1D6F6135003D95A2 /* BlockstackTests.xctest */,
+				97D493311D70EA83004015C8 /* Blockstack.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		97AE4A151D6F6134003D95A2 /* Blockstack */ = {
+		97D493331D70EA83004015C8 /* Blockstack */ = {
 			isa = PBXGroup;
 			children = (
-				97AE4A2D1D6FAD11003D95A2 /* Blockstack.swift */,
-				97AE4A2F1D6FAD64003D95A2 /* Endpoints.swift */,
-				97AE4A161D6F6134003D95A2 /* Blockstack.h */,
-				97AE4A181D6F6134003D95A2 /* Info.plist */,
+				97D493561D70EAC1004015C8 /* Blockstack.swift */,
+				97D493571D70EAC1004015C8 /* Endpoints.swift */,
+				97D493341D70EA83004015C8 /* Blockstack.h */,
+				97D493351D70EA83004015C8 /* Info.plist */,
 			);
 			path = Blockstack;
-			sourceTree = "<group>";
-		};
-		97AE4A211D6F6135003D95A2 /* BlockstackTests */ = {
-			isa = PBXGroup;
-			children = (
-				97AE4A221D6F6135003D95A2 /* BlockstackTests.swift */,
-				97AE4A241D6F6135003D95A2 /* Info.plist */,
-			);
-			path = BlockstackTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		97AE4A101D6F6134003D95A2 /* Headers */ = {
+		97D4932E1D70EA83004015C8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97AE4A171D6F6134003D95A2 /* Blockstack.h in Headers */,
+				97D493361D70EA83004015C8 /* Blockstack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		97AE4A121D6F6134003D95A2 /* Blockstack */ = {
+		97D493301D70EA83004015C8 /* Blockstack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97AE4A271D6F6135003D95A2 /* Build configuration list for PBXNativeTarget "Blockstack" */;
+			buildConfigurationList = 97D493391D70EA83004015C8 /* Build configuration list for PBXNativeTarget "Blockstack" */;
 			buildPhases = (
-				D25FC0502D39141D31B34F41 /* [CP] Check Pods Manifest.lock */,
-				97AE4A0E1D6F6134003D95A2 /* Sources */,
-				97AE4A0F1D6F6134003D95A2 /* Frameworks */,
-				97AE4A101D6F6134003D95A2 /* Headers */,
-				97AE4A111D6F6134003D95A2 /* Resources */,
-				3A461D3C599E3776941590A0 /* [CP] Copy Pods Resources */,
+				97D4932C1D70EA83004015C8 /* Sources */,
+				97D4932D1D70EA83004015C8 /* Frameworks */,
+				97D4932E1D70EA83004015C8 /* Headers */,
+				97D4932F1D70EA83004015C8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -147,72 +87,44 @@
 			);
 			name = Blockstack;
 			productName = Blockstack;
-			productReference = 97AE4A131D6F6134003D95A2 /* Blockstack.framework */;
+			productReference = 97D493311D70EA83004015C8 /* Blockstack.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		97AE4A1C1D6F6135003D95A2 /* BlockstackTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 97AE4A2A1D6F6135003D95A2 /* Build configuration list for PBXNativeTarget "BlockstackTests" */;
-			buildPhases = (
-				97AE4A191D6F6135003D95A2 /* Sources */,
-				97AE4A1A1D6F6135003D95A2 /* Frameworks */,
-				97AE4A1B1D6F6135003D95A2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				97AE4A201D6F6135003D95A2 /* PBXTargetDependency */,
-			);
-			name = BlockstackTests;
-			productName = BlockstackTests;
-			productReference = 97AE4A1D1D6F6135003D95A2 /* BlockstackTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		97AE4A0A1D6F6134003D95A2 /* Project object */ = {
+		97D493281D70EA83004015C8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Blockstack.org;
 				TargetAttributes = {
-					97AE4A121D6F6134003D95A2 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					97AE4A1C1D6F6135003D95A2 = {
-						CreatedOnToolsVersion = 7.3.1;
+					97D493301D70EA83004015C8 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 97AE4A0D1D6F6134003D95A2 /* Build configuration list for PBXProject "Blockstack" */;
+			buildConfigurationList = 97D4932B1D70EA83004015C8 /* Build configuration list for PBXProject "Blockstack" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 97AE4A091D6F6134003D95A2;
-			productRefGroup = 97AE4A141D6F6134003D95A2 /* Products */;
+			mainGroup = 97D493271D70EA83004015C8;
+			productRefGroup = 97D493321D70EA83004015C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				97AE4A121D6F6134003D95A2 /* Blockstack */,
-				97AE4A1C1D6F6135003D95A2 /* BlockstackTests */,
+				97D493301D70EA83004015C8 /* Blockstack */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		97AE4A111D6F6134003D95A2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97AE4A1B1D6F6135003D95A2 /* Resources */ = {
+		97D4932F1D70EA83004015C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -221,69 +133,20 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3A461D3C599E3776941590A0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blockstack/Pods-Blockstack-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D25FC0502D39141D31B34F41 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		97AE4A0E1D6F6134003D95A2 /* Sources */ = {
+		97D4932C1D70EA83004015C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97AE4A301D6FAD64003D95A2 /* Endpoints.swift in Sources */,
-				97AE4A2E1D6FAD11003D95A2 /* Blockstack.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97AE4A191D6F6135003D95A2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97AE4A231D6F6135003D95A2 /* BlockstackTests.swift in Sources */,
+				97D493591D70EAC1004015C8 /* Endpoints.swift in Sources */,
+				97D493581D70EAC1004015C8 /* Blockstack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		97AE4A201D6F6135003D95A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 97AE4A121D6F6134003D95A2 /* Blockstack */;
-			targetProxy = 97AE4A1F1D6F6135003D95A2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		97AE4A251D6F6135003D95A2 /* Debug */ = {
+		97D493371D70EA83004015C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -295,10 +158,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -321,10 +187,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -332,7 +199,7 @@
 			};
 			name = Debug;
 		};
-		97AE4A261D6F6135003D95A2 /* Release */ = {
+		97D493381D70EA83004015C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -344,10 +211,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -364,9 +234,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -374,11 +245,11 @@
 			};
 			name = Release;
 		};
-		97AE4A281D6F6135003D95A2 /* Debug */ = {
+		97D4933A1D70EA83004015C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC2F8CE127F9DAFC852CA3DC /* Pods-Blockstack.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -390,14 +261,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		97AE4A291D6F6135003D95A2 /* Release */ = {
+		97D4933B1D70EA83004015C8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB6D0C70B9426E115814CE53 /* Pods-Blockstack.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -408,60 +280,32 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.blocktack.Blockstack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		97AE4A2B1D6F6135003D95A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = BlockstackTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.blocktack.BlockstackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		97AE4A2C1D6F6135003D95A2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = BlockstackTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.blocktack.BlockstackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		97AE4A0D1D6F6134003D95A2 /* Build configuration list for PBXProject "Blockstack" */ = {
+		97D4932B1D70EA83004015C8 /* Build configuration list for PBXProject "Blockstack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97AE4A251D6F6135003D95A2 /* Debug */,
-				97AE4A261D6F6135003D95A2 /* Release */,
+				97D493371D70EA83004015C8 /* Debug */,
+				97D493381D70EA83004015C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97AE4A271D6F6135003D95A2 /* Build configuration list for PBXNativeTarget "Blockstack" */ = {
+		97D493391D70EA83004015C8 /* Build configuration list for PBXNativeTarget "Blockstack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97AE4A281D6F6135003D95A2 /* Debug */,
-				97AE4A291D6F6135003D95A2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		97AE4A2A1D6F6135003D95A2 /* Build configuration list for PBXNativeTarget "BlockstackTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				97AE4A2B1D6F6135003D95A2 /* Debug */,
-				97AE4A2C1D6F6135003D95A2 /* Release */,
+				97D4933A1D70EA83004015C8 /* Debug */,
+				97D4933B1D70EA83004015C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 97AE4A0A1D6F6134003D95A2 /* Project object */;
+	rootObject = 97D493281D70EA83004015C8 /* Project object */;
 }
