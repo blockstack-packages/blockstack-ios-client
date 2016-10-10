@@ -31,30 +31,6 @@ This is how to lookup users:
 
 ```swift
 let client = Blockstack(appId: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
-client.lookup(users: ["itsProf", "guylepage3"]) { (response, error) in
-    if let error = error {
-        NSLog("Error \(error.localizedDescription)", error)
-        return
-    }
-            
-    if let response = response as? NSData {
-        print(String(data: response, encoding: NSUTF8StringEncoding))
-    }
-}
-```
-
-### Swift 3
-
-If you are working with Swift 3, please install the pod from the `swift3` branch:
-
-```ruby
-pod 'Blockstack', :git => 'https://github.com/blockstack/blockstack-ios-client.git', :branch => 'swift3'
-```
-
-And this is how user lookup is done in Swift 3:
-
-```swift
-let client = Blockstack(appId: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
 client.lookup(["itsProf", "guylepage3"]) { (data, error) in
     if let error = error {
         debugPrint(error.localizedDescription, error)
