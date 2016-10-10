@@ -1,9 +1,9 @@
 # blockstack-ios-client
-iOS client for blockstack-server.
+iOS client for blockstack-core.
 
 ###Installation
 
-Installation is done through [CocoaPods](http://cocoapods.org/), a Swift and Objective-C dependency manager. Visit their site for more information about [CocoaPods](http://cocoapods.org/) configuration and installation.
+Installation is done through [CocoaPods](http://cocoapods.org/), a Swift 3 and Objective-C dependency manager. Visit their site for more information about [CocoaPods](http://cocoapods.org/) configuration and installation.
 
 To install [CocoaPods](http://cocoapods.org/), open `Terminal` and run the following command:
 ```
