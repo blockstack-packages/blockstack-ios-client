@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name        = 'Blockstack'
   s.version     = '0.0.14'
-  s.summary     = 'iOS client for blockstack-server.'
+  s.summary     = 'iOS client for blockstack-core.'
   s.homepage    = 'https://github.com/blockstack/blockstack-ios-client'
   s.license     = { :type => "MIT" }
   s.authors     = { 'itsProf' => 'jorge@profapps.co' }
